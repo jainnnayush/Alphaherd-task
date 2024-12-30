@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { User, Paperclip, Link2, Smile, ImageIcon, Send } from "lucide-react";
+import { Paperclip, Link2, Smile, ImageIcon, Send } from "lucide-react";
 
 type CommunicationType = "SMS" | "Mail" | "WhatsApp";
 
@@ -11,7 +11,9 @@ interface MessagePrompt {
 }
 
 export function MessageComposer() {
-  const [selectedMode, setSelectedMode] = useState<CommunicationType>("SMS");
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   const [selectedMode, setSelectedMode] = useState<CommunicationType>("SMS");
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [prompt, setPrompt] = useState<MessagePrompt>({
     text: "An email to all dog parents inviting them for an annual health check up",
     tags: [
