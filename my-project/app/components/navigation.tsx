@@ -4,7 +4,7 @@ import { Home, DollarSign, Package, Database, Bell, User, ArrowUpCircle } from '
 export function Navigation() {
   return (
     <nav className="flex items-center justify-between px-4 py-2 bg-[#1A1A1A] text-white font-sans">
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-10">
         {/* Home */}
         <Link
           href="/"
@@ -42,7 +42,7 @@ export function Navigation() {
         </Link>
       </div>
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-8">
         {/* Bell Icon */}
         <button className="hover:text-[#40C7B9] transition-colors">
           <Bell size={18} />

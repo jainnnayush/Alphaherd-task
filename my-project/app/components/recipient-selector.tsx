@@ -20,7 +20,7 @@ export function RecipientSelector() {
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4">
-      <h2 className="text-base font-medium text-gray-700 mb-4">Select recipients</h2>
+      <h2 className="text-base font-medium text-[#6B7E7D] mb-4">Select recipients</h2>
       <div className="relative mb-4">
         <input
           type="text"
@@ -39,21 +39,21 @@ export function RecipientSelector() {
           <Avatar className="h-5 w-5">
             <img src="/placeholder.svg?height=20&width=20" alt="Rhea Pais" />
           </Avatar>
-          <span className="text-xs text-gray-700">Rhea Pais</span>
+          <span className="text-xs text-[#6B7E7D]">Rhea Pais</span>
           <button className="text-gray-400 hover:text-gray-600 ml-1">×</button>
         </div>
         <div className="flex items-center gap-1 bg-gray-100 rounded-full px-2 py-1">
           <Avatar className="h-5 w-5">
             <img src="/placeholder.svg?height=20&width=20" alt="Shikhar Singh" />
           </Avatar>
-          <span className="text-xs text-gray-700">Shikhar Singh</span>
+          <span className="text-xs text-[#6B7E7D]">Shikhar Singh</span>
           <button className="text-gray-400 hover:text-gray-600 ml-1">×</button>
         </div>
         <div className="flex items-center gap-1 bg-gray-100 rounded-full px-2 py-1">
           <Avatar className="h-5 w-5">
             <img src="/placeholder.svg?height=20&width=20" alt="Quentin Tarantino" />
           </Avatar>
-          <span className="text-xs text-gray-700">Quentin Tarantino</span>
+          <span className="text-xs text-[#6B7E7D]">Quentin Tarantino</span>
           <button className="text-gray-400 hover:text-gray-600 ml-1">×</button>
         </div>
       </div>
@@ -61,21 +61,22 @@ export function RecipientSelector() {
         {recipients.map((recipient) => (
           <div
             key={recipient.id}
-            className="flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg"
+            className="flex items-center justify-between p-2 hover:bg-gray-100 rounded-lg"
           >
             <div className="flex items-center space-x-3">
               <Avatar className="h-8 w-8">
                 <img src={recipient.image} alt={recipient.name} className="rounded-full" />
               </Avatar>
-              <span className="text-sm text-gray-700">{recipient.name}</span>
+              <span className="text-sm text-[#A2A3A3]">{recipient.name}</span>
             </div>
             <Checkbox
               checked={selected.includes(recipient.id)}
-              onCheckedChange={(checked) => {
-                if (checked) {
-                  setSelected([...selected, recipient.id])
+              onChange={(e) => {
+                const isChecked = e.target.checked;
+                if (isChecked) {
+                  setSelected([...selected, recipient.id]);
                 } else {
-                  setSelected(selected.filter((id) => id !== recipient.id))
+                  setSelected(selected.filter((id) => id !== recipient.id));
                 }
               }}
               className="text-[#40C7B9] border-gray-300"
@@ -84,8 +85,8 @@ export function RecipientSelector() {
         ))}
       </div>
       <div className="flex justify-between mt-4 pt-4 border-t border-gray-100">
-        <button className="text-sm text-[#40C7B9] hover:text-[#3BB3A6]">Select All</button>
-        <button className="text-sm text-gray-500 hover:text-gray-700">Clear All</button>
+        <button className="text-sm text-[#A2A3A3] hover:text-gray-500">Select All</button>
+        <button className="text-sm text-[#A2A3A3] hover:text-gray-500">Clear All</button>
       </div>
     </div>
   )
