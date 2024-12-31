@@ -8,34 +8,34 @@ const recipients = [
   {
     id: 1,
     name: "Quentin Tarantino",
-    image: "/patient.png?height=40&width=40",
+    image: "/Patient.png?height=40&width=40",
   },
-  { id: 2, name: "Rhea Pais", image: "/patient2.png?height=40&width=40" },
+  { id: 2, name: "Rhea Pais", image: "/Patient2.png?height=40&width=40" },
   {
     id: 3,
     name: "Samuel L. Jackson",
-    image: "/patient3.png?height=40&width=40",
+    image: "/Patient3.png?height=40&width=40",
   },
   {
     id: 4,
     name: "Avinash Pinto",
-    image: "/patient4.png?height=40&width=40",
+    image: "/Patient4.png?height=40&width=40",
   },
-  { id: 5, name: "Ruben Brandt", image: "/patient5.png?height=40&width=40" },
+  { id: 5, name: "Ruben Brandt", image: "/Patient5.png?height=40&width=40" },
   {
     id: 6,
     name: "Alexander Trakovsky",
-    image: "/patient6.png?height=40&width=40",
+    image: "/Patient6.png?height=40&width=40",
   },
   {
     id: 7,
     name: "Samuel L. Jackson",
-    image: "/patient7.png?height=40&width=40",
+    image: "/Patient7.png?height=40&width=40",
   },
 ];
 
 export function RecipientSelector() {
-  const [selected, setSelected] = useState<number[]>([]);
+  const [selected, setSelected] = useState<number[]>([1,2,3]);
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSelectAll = () => {
@@ -91,33 +91,39 @@ export function RecipientSelector() {
       </div>
 
       <div className="flex flex-wrap gap-2 mb-4">
-  {selected.map((id) => {
-    const selectedRecipient = recipients.find((recipient) => recipient.id === id);
-    return (
-      <div
-        key={id}
-        className="flex items-center gap-1 bg-gray-100 rounded-full px-2 py-1"
-      >
-        <Avatar className="h-5 w-5">
-          <img
-            src={selectedRecipient?.image}
-            alt={selectedRecipient?.name}
-            className="rounded-full"
-          />
-        </Avatar>
-        <span className="text-xs px-2 text-[#6B7E7D]">
-          {selectedRecipient?.name}
-        </span>
-        <button
-          className="text-gray-400 hover:text-gray-600 ml-1"
-          onClick={() => setSelected(selected.filter((selectedId) => selectedId !== id))}
-        >
-          ×
-        </button>
+        {selected.map((id) => {
+          const selectedRecipient = recipients.find(
+            (recipient) => recipient.id === id
+          );
+          return (
+            <div
+              key={id}
+              className="flex items-center gap-1 bg-gray-100 rounded-full px-2 py-1"
+            >
+              <Avatar className="h-5 w-5">
+                <img
+                  src={selectedRecipient?.image}
+                  alt={selectedRecipient?.name}
+                  className="rounded-full"
+                />
+              </Avatar>
+              <span className="text-xs px-2 text-[#6B7E7D]">
+                {selectedRecipient?.name}
+              </span>
+              <button
+                className="text-gray-400 hover:text-gray-600 ml-1"
+                onClick={() =>
+                  setSelected(
+                    selected.filter((selectedId) => selectedId !== id)
+                  )
+                }
+              >
+                ×
+              </button>
+            </div>
+          );
+        })}
       </div>
-    );
-  })}
-</div>
       <div className="space-y-2 max-h-[400px] overflow-y-auto">
         {recipients.map((recipient) => (
           <div

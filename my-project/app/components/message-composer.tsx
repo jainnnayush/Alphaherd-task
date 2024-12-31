@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Paperclip, Link2, Smile, ImageIcon} from "lucide-react";
+import { Paperclip, Link2, Smile, ImageIcon } from "lucide-react";
 
 type CommunicationType = "SMS" | "Mail" | "WhatsApp";
 
@@ -172,15 +172,30 @@ export function MessageComposer() {
             className="w-full bg-transparent border-none focus:outline-none text-[13px] resize-none"
           />
           <button className="bg-[#40C7B9] p-1.5 rounded-[10px] text-white hover:bg-[#3BB3A6]">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_1_692" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
-<rect width="20" height="20" fill="#D9D9D9"/>
-</mask>
-<g mask="url(#mask0_1_692)">
-<path d="M1.8418 16.6663V3.33301L16.9554 9.99967L1.8418 16.6663ZM3.43271 14.1663L12.8588 9.99967L3.43271 5.83301V8.74967L8.20543 9.99967L3.43271 11.2497V14.1663Z" fill="white"/>
-</g>
-</svg>
-
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <mask
+                id="mask0_1_692"
+                maskUnits="userSpaceOnUse"
+                x="0"
+                y="0"
+                width="20"
+                height="20"
+              >
+                <rect width="20" height="20" fill="#D9D9D9" />
+              </mask>
+              <g mask="url(#mask0_1_692)">
+                <path
+                  d="M1.8418 16.6663V3.33301L16.9554 9.99967L1.8418 16.6663ZM3.43271 14.1663L12.8588 9.99967L3.43271 5.83301V8.74967L8.20543 9.99967L3.43271 11.2497V14.1663Z"
+                  fill="white"
+                />
+              </g>
+            </svg>
           </button>
         </div>
       </div>
