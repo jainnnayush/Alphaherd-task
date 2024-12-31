@@ -14,7 +14,7 @@ export default function CommunicationPreview() {
           <h1 className="text-2xl font-semibold text-[#6B7E7D] ml-2">Communication</h1>
 
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8">
           <RecipientSelector />
           <MessageComposer />
         </div>
